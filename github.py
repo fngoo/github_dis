@@ -60,7 +60,7 @@ class Github(object):
         post_data['login'], post_data[
             'password'] = "xiaodongtest", "xiaodongtest123"  # 这里可以换成你自己的github账号，建议申请个小号，不然会被封
         login_request.post("https://github.com/session", data=post_data, headers=self.headers)
-        self.cookies = login_request.cookies
+        self.cookies = {'logged_in': 'yes', '_octo': 'GH1.1.615292381.1555819431', '_device_id': '0bc423ea5256d98974a6eeceda6795d8', '_gh_sess': 'VWJDaHJFK3JvUGdwaU45UTY0OGkzKzhJYm9QRFpDby9pYzAxU2dERzNRcEhQZkFUZUtZMjBNaVY3STUrVWd6K2ovYldkWXdieW12L3B6UFB3MUFvdWVKQ0xUYlZRZHVydHRMaDlEcEUzaTJRSnFFZUY1Y2hzVlhoVjZZNEVYYlZBNUowM1g2N2pYTTMyRU9pOFV4YkpTaG9LcUwyTDRUQlE2YytIbVMxSU5pczF4VStzYjRQZWdNaVlObWRTbEtFOUplTks4eEllTGYyTEQzMnNOS2U1QXBJY3h6L3h6YllIampmamxNb24yWmJIejU2M2dzQm1Xc1QxeGhqVkZWTC0ta2VhMkRsV1Q1eDRJNlB2bjE3SVVmdz09--d9a418323b8242f91a25140bca0cacfec8b1190a', 'tz': 'Asia%2FShanghai', 'has_recent_activity': '1', 'user_session': 'QbooIJ6mxvbBT1Zv9dXkNtRI6iq7fwNbfj9KfJdahJvPY1d7', '__Host-user_session_same_site': 'QbooIJ6mxvbBT1Zv9dXkNtRI6iq7fwNbfj9KfJdahJvPY1d7', 'dotcom_user': 'githubkuruma1'}
         # print self.cookies
         if self.cookies['logged_in'] == 'no':
             print('[!_!] ERROR INFO: Login Github failed, please check account in config file.')
