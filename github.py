@@ -60,7 +60,7 @@ class Github(object):
         post_data['login'], post_data[
             'password'] = "xiaodongtest", "xiaodongtest123"  # 这里可以换成你自己的github账号，建议申请个小号，不然会被封
         login_request.post("https://github.com/session", data=post_data, headers=self.headers)
-        self.cookies = {'logged_in': 'yes', '_octo': 'GH1.1.615292381.1555819431'}
+        self.cookies = {'token': 'token'token 'token': 'token'}
         # print self.cookies
         if self.cookies['logged_in'] == 'no':
             print('[!_!] ERROR INFO: Login Github failed, please check account in config file.')
